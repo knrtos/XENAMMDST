@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Developmental Checklist</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Comfortaa", sans-serif;
+            color: #054607;
+            background: transparent;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 18px;
+            background: rgba(254, 255, 234, 0.9);
+        }
+        th, td {
+            border: 2px solid #498202;
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #82A436;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        td:first-child, td:nth-child(2) {
+            font-weight: bold;
+        }
+        td input[type="checkbox"] {
+            transform: scale(1.2);
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let xinaCheckboxes = document.querySelectorAll("input[type='checkbox']");
+            xinaCheckboxes.forEach((xinaCheckbox, xinaIndex) => {
+                let xinaSavedState = localStorage.getItem("xina-checkbox-" + xinaIndex);
+                if (xinaSavedState === "true") {
+                    xinaCheckbox.checked = true;
+                }
+                xinaCheckbox.addEventListener("change", function() {
+                    localStorage.setItem("xina-checkbox-" + xinaIndex, xinaCheckbox.checked);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Age</th>
+                <th>Category</th>
+                <th>Checklist</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td rowspan="4">5 YEARS OLD</td><td>Personal – Social</td><td style="font-weight: normal;"><input type="checkbox"> Separates from mother easily<br><input type="checkbox"> Dresses without supervision</td></tr>
+            <tr><td>Fine Motor Adaptive</td><td style="font-weight: normal;"><input type="checkbox"> Imitates<br><input type="checkbox"> Copies<br><input type="checkbox"> Draws man in 3 parts<br><input type="checkbox"> Draws man in 6 parts<br><input type="checkbox"> Picks longer lines</td></tr>
+            <tr><td>Language</td><td style="font-weight: normal;"><input type="checkbox"> Comprehends cold, tired, hungry<br><input type="checkbox"> Recognizes 3 colors<br><input type="checkbox"> Opposite analogies</td></tr>
+            <tr><td>Gross Motor</td><td style="font-weight: normal;"><input type="checkbox"> Balance on 1 foot 10 seconds<br><input type="checkbox"> Catches bounced ball<br><input type="checkbox"> Heel to toe walk<br><input type="checkbox"> Backward heel toe</td></tr>
+            
+            <tr><td rowspan="4">5 YEARS OLD ½ MONTH</td><td>Personal – Social</td><td style="font-weight: normal;"><input type="checkbox"> Separates from mother easily<br><input type="checkbox"> Dresses without supervision</td></tr>
+            <tr><td>Fine Motor Adaptive</td><td style="font-weight: normal;"><input type="checkbox"> Imitates<br><input type="checkbox"> Copies<br><input type="checkbox"> Draws man in 3 parts<br><input type="checkbox"> Draws man in 6 parts<br><input type="checkbox"> Picks longer lines</td></tr>
+            <tr><td>Language</td><td style="font-weight: normal;"><input type="checkbox"> Comprehends cold, tired, hungry<br><input type="checkbox"> Recognizes 3 colors<br><input type="checkbox"> Opposite analogies</td></tr>
+            <tr><td>Gross Motor</td><td style="font-weight: normal;"><input type="checkbox"> Balance on 1 foot 10 seconds<br><input type="checkbox"> Catches bounced ball<br><input type="checkbox"> Heel to toe walk<br><input type="checkbox"> Backward heel toe</td></tr>
+            
+            <tr><td rowspan="4">6 YEARS OLD</td><td>Personal – Social</td><td style="font-weight: normal;"><input type="checkbox"> Dresses without supervision</td></tr>
+            <tr><td>Fine Motor Adaptive</td><td style="font-weight: normal;"><input type="checkbox"> Imitates<br><input type="checkbox"> Copies<br><input type="checkbox"> Draws man in 3 parts<br><input type="checkbox"> Draws man in 6 parts</td></tr>
+            <tr><td>Language</td><td style="font-weight: normal;"><input type="checkbox"> Recognizes 3 colors<br><input type="checkbox"> Defines 6 words</td></tr>
+            <tr><td>Gross Motor</td><td style="font-weight: normal;"><input type="checkbox"> Backward heel toe</td></tr>
+        </tbody>
+    </table>
+</body>
+</html>
